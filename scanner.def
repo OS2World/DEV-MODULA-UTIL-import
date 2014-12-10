@@ -1,0 +1,27 @@
+DEFINITION MODULE Scanner;
+
+        (********************************************************)
+        (*                                                      *)
+        (*              Simplified lexical analyser             *)
+        (*                                                      *)
+        (*  Programmer:         P. Moylan                       *)
+        (*  Started:            14 January 2000                 *)
+        (*  Last edited:        14 January 2000                 *)
+        (*  Status:             OK                              *)
+        (*                                                      *)
+        (********************************************************)
+
+IMPORT IOChan;
+
+PROCEDURE StartScan (cid: IOChan.ChanId);
+
+    (* Resets the scanner to work with a new file. *)
+
+PROCEDURE Scan (VAR (*OUT*) token: ARRAY OF CHAR;
+                VAR (*OUT*) alphanumeric: BOOLEAN);
+
+    (* Returns the next input token, returns alphanumeric=TRUE iff      *)
+    (* this is an identifier or a keyword.                              *)
+
+END Scanner.
+

@@ -1,0 +1,37 @@
+DEFINITION MODULE Files;
+
+        (********************************************************)
+        (*                                                      *)
+        (*                  File operations                     *)
+        (*                                                      *)
+        (*  Programmer:         P. Moylan                       *)
+        (*  Started:            13 January 2000                 *)
+        (*  Last edited:        15 January 2000                 *)
+        (*  Status:             OK                              *)
+        (*                                                      *)
+        (********************************************************)
+
+TYPE
+    FilenameIndex = [0..511];
+    FilenameString = ARRAY FilenameIndex OF CHAR;
+
+PROCEDURE StripSpaces (VAR (*INOUT*) string: ARRAY OF CHAR);
+
+    (* Removes leading and trailing spaces from string. *)
+
+(************************************************************************)
+(*               MAPPING FROM MODULE NAME TO FILE NAME                  *)
+(************************************************************************)
+
+PROCEDURE LocateModule (modulename: FilenameString;
+                        definition: BOOLEAN;
+                        VAR (*OUT*) filename: FilenameString;
+                        VAR (*OUT*) IsSource: BOOLEAN);
+
+    (* Given a module name, works out the full file name.  If parameter *)
+    (* 'definition' is true then we are looking for a definition module.*)
+    (* On return IsSource=TRUE iff this is a source file rather than    *)
+    (* a binary file.                                                   *)
+
+END Files.
+
