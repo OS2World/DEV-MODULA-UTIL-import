@@ -5,7 +5,7 @@ This program is to list the names of all of the source files in a Modula-2 progr
 
 LICENSE
 ===============
-* Not Specified
+* Free software / Give credit to author
 
 COMPILE TOOLS
 ===============
